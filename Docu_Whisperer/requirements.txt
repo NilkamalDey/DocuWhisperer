@@ -1,0 +1,14 @@
+streamlit
+langchain
+langchain-community
+langchain-core
+langchain-openai
+openai
+python-dotenv
+faiss-cpu
+sentence-transformers
+docx2txt
+pypdf
+bs4
+selenium
+webdriver-manager
