@@ -22,8 +22,8 @@ def setup_environment():
             f"Set-Content -Encoding ascii -Path {ca_bundle_path}"
         ])
 
-    os.environ["OPENAI_BASE_URL"] = "https://api.studio.genai.cba"
-    os.environ["NO_PROXY"] = os.environ.get("NO_PROXY", "") + (",.cba" if os.environ.get("NO_PROXY") else ".cba")
+    os.environ["OPENAI_BASE_URL"] = "https://api.studio.genai"
+    os.environ["NO_PROXY"] = os.environ.get("NO_PROXY", "") + ("," if os.environ.get("NO_PROXY"))
 
     if os.path.exists(ca_bundle_path):
         os.environ["REQUESTS_CA_BUNDLE"] = ca_bundle_path
