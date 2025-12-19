@@ -1,12 +1,12 @@
 # Use a Debian base image
-FROM applicationinfrastructure-public.docker.internal.cba/library/python:3.11-slim-bookworm
+FROM applicationinfrastructure-public.docker.internal/library/python:3.11-slim-bookworm
 
 WORKDIR /app
 
 COPY . /app
 
 # Do not store pip cache during install
-RUN pip3 install --no-cache-dir --timeout=1500 -r /app/requirements.txt --index-url https://artifactory.internal.cba/artifactory/api/pypi/pypi/simple
+RUN pip3 install --no-cache-dir --timeout=1500 -r /app/requirements.txt --index-url https://artifactory.internal/artifactory/api/pypi/pypi/simple
 
 RUN pip3 install tiktoken \
  && mkdir -p /app/tiktoken_cache \
