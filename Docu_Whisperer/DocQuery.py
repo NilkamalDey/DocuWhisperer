@@ -24,7 +24,7 @@ os.environ["TIKTOKEN_CACHE_DIR"] = "/tmp/tiktoken_cache"
 FAISS_INDEX_PATH = "faiss_index"  # Use /tmp for FAISS index
 setup_environment()
 api_key = get_api_key()
-api_base_url = "https://api.studio.genai.cba"
+api_base_url = "https://api.studio.genai"
 
 OPENAI_API_KEY_VERIFY_SSL = False
 
@@ -53,14 +53,14 @@ elif platform.system() == "Linux":
 
 os.environ.update({
     "OPENAI_API_KEY": os.environ.get("OPENAI_API_KEY", ""),
-    "OPENAI_BASE_URL": "https://api.studio.genai.cba",
-    "NO_PROXY": os.environ.get("NO_PROXY", "") + (",.cba" if os.environ.get("NO_PROXY") else ".cba"),
+    "OPENAI_BASE_URL": "https://api.studio.genai",
+    "NO_PROXY": os.environ.get("NO_PROXY", "") + ("," if os.environ.get("NO_PROXY")),
     "REQUESTS_CA_BUNDLE": ca_bundle_path,
     # "SSL_CERT_FILE": ca_bundle_path
 })
 
-os.environ["OPENAI_BASE_URL"] = "https://api.studio.genai.cba"
-os.environ["NO_PROXY"] = os.environ.get("NO_PROXY", "") + (",.cba" if os.environ.get("NO_PROXY") else ".cba")
+os.environ["OPENAI_BASE_URL"] = "https://api.studio.genai"
+os.environ["NO_PROXY"] = os.environ.get("NO_PROXY", "") + ("," if os.environ.get("NO_PROXY"))
 
 # --- Streamlit Page Configuration --- Custom CSS for UI ---
 st.set_page_config(
