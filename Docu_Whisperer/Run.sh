@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export OPENAI_API_KEY=<Add your API key here>
-export OPENAI_API_BASE="https://api.studio.genai.cba"
+export OPENAI_API_BASE="https://api.studio.genai"
 
 # Remove existing container (ignore error if not found)
 docker rm -f DocuWisperer 2>/dev/null
@@ -14,7 +14,7 @@ docker run -it \
   --name DocuWisperer \
   -p 8501:8501 \
   -v /Users/nilkamal.dey/PyCharmMiscProject/TestDocker:/app \
-  --env-file /Users/nilkamal.dey/PyCharmMiscProject/TestDocker/.env \
+  --env-file /Users/<usr>/PyCharmMiscProject/TestDocker/.env \
   --entrypoint streamlit \
   docu-wisper:latest \
   run /app/DocQuery.py
